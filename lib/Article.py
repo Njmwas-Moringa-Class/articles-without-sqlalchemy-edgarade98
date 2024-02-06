@@ -13,7 +13,7 @@ class Article:
         Article.all_articles.append(self)
     
     def get_author(self):
-        from Author import Author  # Move import statement here
+        from Author import Author  #import statement
         return Author.get_author_by_id(self.author)
 
     def get_title(self):
