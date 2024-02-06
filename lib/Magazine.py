@@ -22,6 +22,18 @@ class Magazine:
         return list(magazines_contributors)
     
     @classmethod
+    def find_by_name(cls, name):
+        for magazine in cls.all_magazines:
+            if magazine.get_name() == name:
+                return magazine
+    @classmethod
+    def article_titles(cls):
+        article_titles = []
+        for article in article.get_all_articles():
+            article_titles.append(article.get_title())
+        return article_titles
+    
+    @classmethod
     def get_all_magazines (cls):
         return  cls.all_magazines
     

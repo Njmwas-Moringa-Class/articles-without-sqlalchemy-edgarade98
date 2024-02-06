@@ -10,7 +10,7 @@ class Author:
         Author.all_authors.append(self)
 
     def get_articles(self):
-        from Article import Article  # Move import statement here
+        from Article import Article    #import statement
         return Article.get_articles_by_author(self.id)
 
     def get_name(self):
@@ -24,10 +24,21 @@ class Author:
             author_magazines.add(article.get_magazine())
         return list(author_magazines)
     
+    def add_article (self, magazine, title):
+        article = article(self, magazine, title)
+        return article
+    
+    def topic_areas(self):
+        magazine_categories = set()
+        for magazine in self.get_magazines():
+            magazine_categories.add(magazine.get_category())
+        return list(magazine_categories)
+    
     
 @classmethod
 def get_all_authors(cls):
     return cls.all_authors
+
 
 
 
