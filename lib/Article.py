@@ -1,4 +1,3 @@
-from Author import Author
 from Magazine import Magazine
 
 class Article:
@@ -13,8 +12,7 @@ class Article:
         Article.all_articles.append(self)
     
     def get_author(self):
-        from Author import Author  #import statement
-        return Author.get_author_by_id(self.author)
+     return self.author
 
     def get_title(self):
         return self._title
@@ -28,6 +26,8 @@ class Article:
     @classmethod
     def get_all_articles (cls):
         return  cls.all_articles
+    
+
     
     
 

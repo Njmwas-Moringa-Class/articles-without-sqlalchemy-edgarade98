@@ -15,7 +15,7 @@ class Magazine:
         return  self._category
     
     def get_magazine_contributors (self):
-         
+
         magazines_contributors = set()
         for article in self.articles():
             magazines_contributors.add(article.get_magazine())
@@ -26,6 +26,7 @@ class Magazine:
         for magazine in cls.all_magazines:
             if magazine.get_name() == name:
                 return magazine
+            
     @classmethod
     def article_titles(cls):
         article_titles = []
@@ -36,6 +37,8 @@ class Magazine:
     @classmethod
     def get_all_magazines (cls):
         return  cls.all_magazines
+    
+
     
 
 
